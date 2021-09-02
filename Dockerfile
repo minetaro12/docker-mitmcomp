@@ -1,10 +1,10 @@
-FROM ubuntu:20.04
+FROM python:3.9-slim
 
 #python3-pipのインストール
-RUN apt update && apt install -y python3-pip && apt clean
+RUN apt update && apt install -y gcc && apt clean && rm -rf /var/lib/apt/lists/*
 
 #pillowとmitmdumpをインストール
-RUN pip3 install pillow mitmdump
+RUN pip3 install pillow mitmdump && rm -rf /root/.cache/pip/*
 
 #画像圧縮スクリプトのコピー
 COPY flows.py /mitmcomp/
