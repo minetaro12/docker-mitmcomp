@@ -2,10 +2,8 @@ FROM ubuntu:20.04
 
 WORKDIR /mitmcomp
 
-RUN apt update
-
 #python3-pipのインストール
-RUN apt install -y python3-pip
+RUN apt update && apt install -y python3-pip && apt clean
 
 #pillowとmitmdumpをインストール
 RUN pip3 install pillow mitmdump
