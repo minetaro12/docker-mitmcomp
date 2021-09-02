@@ -4,5 +4,6 @@ services:
   mitmcomp:
     build: .
     restart: always
+    working_dir: /mitmcomp
     ports:
       - "8000:8000"
