@@ -1,6 +1,6 @@
 FROM python:3.9-slim
 
-#python3-pipのインストール
+#gccのインストール
 RUN apt update && apt install -y gcc && apt clean && rm -rf /var/lib/apt/lists/*
 
 #pillowとmitmdumpをインストール
