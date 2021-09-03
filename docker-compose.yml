@@ -7,3 +7,5 @@ services:
     working_dir: /mitmcomp
     ports:
       - "8000:8000"
+    volumes:
+      - ./mitmproxy:/root/.mitmproxy
