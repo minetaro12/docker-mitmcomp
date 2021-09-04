@@ -14,7 +14,7 @@ def response(flow):
     s2 = io.BytesIO()
     if (cl) > 10000:
 
-     # jpeg を quality 10/100 に変換する
+     # jpeg を webp quality 30/100 に変換する
      if (ct) [0:10] == ("image/jpeg"):
          print("*** start %s ***" % (ru))
          start = time.time()
@@ -28,7 +28,7 @@ def response(flow):
          print("*** compressed %s percent, size = %s/%s bytes, %s to %s, %s is processed, %s sec ***" % (i, cl2, cl, ct, ct2, ru, elapsed_time))
          #return
 
-     # png を compress_level=9, 8bit に変換する
+     # png を webp quality 30/100 に変換する
      if (ct) [0:9] == ("image/png"):
          print("*** start %s ***" % (ru))
          start = time.time()
@@ -42,7 +42,7 @@ def response(flow):
          print("*** compressed %s percent, size = %s/%s bytes, %s to %s, %s is processed, %s sec ***" % (i, cl2, cl, ct, ct2, ru, elapsed_time))
          return
 
-     # webp を quality 10/100 に変換する
+     # webp を quality 30/100 に変換する
      if (ct) [0:10] == ("image/webp"):
          print("*** start %s ***" % (ru))
          start = time.time()
