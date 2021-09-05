@@ -25,7 +25,7 @@ def response(flow):
          cl2  = int(flow.response.headers["content-length"])
          i = int(cl2 /cl * 100)
          elapsed_time = time.time() - start
-         print("*** compressed %s percent, size = %s/%s bytes, %s to image/webp, %s is processed, %s sec ***" % (i, cl2, cl, ct, ct2, ru, elapsed_time))
+         print("*** compressed %s percent, size = %s/%s bytes, %s to image/webp, %s is processed, %s sec ***" % (i, cl2, cl, ct, ru, elapsed_time))
          #return
 
      # png を webp quality 30/100 に変換する
@@ -39,7 +39,7 @@ def response(flow):
          cl2  = int(flow.response.headers["content-length"])
          i = int(cl2 /cl * 100)
          elapsed_time = time.time() - start
-         print("*** compressed %s percent, size = %s/%s bytes, %s to image/webp, %s is processed, %s sec ***" % (i, cl2, cl, ct, ct2, ru, elapsed_time))
+         print("*** compressed %s percent, size = %s/%s bytes, %s to image/webp, %s is processed, %s sec ***" % (i, cl2, cl, ct, ru, elapsed_time))
          return
 
      # webp を quality 30/100 に変換する
@@ -53,5 +53,5 @@ def response(flow):
          cl2  = int(flow.response.headers["content-length"])
          i = int(cl2 /cl * 100)
          elapsed_time = time.time() - start
-         print("*** compressed %s percent, size = %s/%s bytes, %s to image/webp, %s is processed, %s sec ***" % (i, cl2, cl, ct, ct2, ru, elapsed_time))
+         print("*** compressed %s percent, size = %s/%s bytes, %s to image/webp, %s is processed, %s sec ***" % (i, cl2, cl, ct, ru, elapsed_time))
          return
