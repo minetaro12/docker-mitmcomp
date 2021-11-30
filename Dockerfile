@@ -1,11 +1,9 @@
 FROM python:3.9-alpine
 
-#gccのインストール
+#依存関係のインストール
 RUN apk add --no-cache -t build-deps gcc g++ python3-dev musl-dev libffi-dev && \
-    apk add --no-cache jpeg-dev zlib-dev libjpeg
-
-#pillowとmitmdumpをインストール
-RUN pip3 install pillow mitmdump && \
+    apk add --no-cache jpeg-dev zlib-dev libjpeg libstdc++ && \
+    pip3 install pillow mitmdump && \
     rm -rf /root/.cache/pip/* && \
     apk del build-deps
 
