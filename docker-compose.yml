@@ -2,7 +2,7 @@ version: "3"
 
 services:
   mitmcomp:
-    build: .
+    image: minetaro12/docker-mitmcomp:latest
     restart: always
     working_dir: /mitmcomp
     ports:
