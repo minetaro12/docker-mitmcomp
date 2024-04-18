@@ -1,13 +1,10 @@
-FROM python:3.9-alpine
+FROM mitmproxy/mitmproxy:latest
 
 #依存関係のインストール
-RUN apk add --no-cache -t build-deps gcc g++ python3-dev musl-dev libffi-dev && \
-    apk add --no-cache jpeg-dev zlib-dev libjpeg libstdc++ && \
-    pip3 install pillow mitmdump && \
-    rm -rf /root/.cache/pip/* && \
-    apk del build-deps
+RUN pip3 install pillow && \
+    rm -rf /root/.cache/pip/*
 
 #画像圧縮スクリプトのコピー
-COPY flows.py /mitmcomp/
+# COPY flows.py /
 
-CMD /usr/local/bin/mitmdump --listen-port 8000 --ssl-insecure -s flows.py --set stream_large_bodies=10m --set block_global=false --set flow_detail=1 --set http2=false --showhost --rawtcp
+ENTRYPOINT /usr/local/bin/mitmdump --listen-port 8000 --ssl-insecure -s /flows.py

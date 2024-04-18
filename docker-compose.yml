@@ -2,10 +2,13 @@ version: "3"
 
 services:
   mitmcomp:
+    #build: .
     image: ghcr.io/minetaro12/docker-mitmcomp:latest
     restart: always
-    working_dir: /mitmcomp
+    tty: true
+    init: true
     ports:
       - "8000:8000"
     volumes:
       - ./mitmproxy:/root/.mitmproxy
+      - ./flows.py:/flows.py:ro

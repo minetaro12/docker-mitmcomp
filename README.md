@@ -1,7 +1,6 @@
 # docker-mitmcomp
 
 mitmproxyを使ってhttps/http通信の画像圧縮をします  
-Dockerイメージ: https://hub.docker.com/r/minetaro12/docker-mitmcomp/tags  
 ## 使い方
 1. `git clone https://github.com/minetaro12/docker-mitmcomp`  
 2. `docker-compose up -d`  
